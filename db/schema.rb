@@ -12,19 +12,19 @@
 
 ActiveRecord::Schema.define(version: 20170130064900) do
 
-  create_table "article_pictureships", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
+  create_table "article_pictureships", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer "article_id", null: false
     t.integer "picture_id", null: false
     t.index ["article_id", "picture_id"], name: "index_article_pictureships_on_article_id_and_picture_id", unique: true, using: :btree
   end
 
-  create_table "article_tagships", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
+  create_table "article_tagships", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer "article_id", null: false
     t.integer "tag_id",     null: false
     t.index ["article_id", "tag_id"], name: "index_article_tagships_on_article_id_and_tag_id", unique: true, using: :btree
   end
 
-  create_table "articles", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
+  create_table "articles", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "title",                                      null: false
     t.text     "content",      limit: 65535
     t.boolean  "posted",                     default: false
@@ -39,18 +39,18 @@ ActiveRecord::Schema.define(version: 20170130064900) do
     t.index ["user_id"], name: "index_articles_on_user_id", using: :btree
   end
 
-  create_table "categories", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
+  create_table "categories", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "name", null: false
     t.index ["name"], name: "index_categories_on_name", unique: true, using: :btree
   end
 
-  create_table "comment_pictureships", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
+  create_table "comment_pictureships", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer "comment_id", null: false
     t.integer "picture_id", null: false
     t.index ["comment_id", "picture_id"], name: "index_comment_pictureships_on_comment_id_and_picture_id", unique: true, using: :btree
   end
 
-  create_table "comments", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
+  create_table "comments", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.text     "content",      limit: 65535,             null: false
     t.text     "content_html", limit: 65535
     t.integer  "user_id",                                null: false
@@ -65,7 +65,7 @@ ActiveRecord::Schema.define(version: 20170130064900) do
     t.index ["user_id"], name: "index_comments_on_user_id", using: :btree
   end
 
-  create_table "holds", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
+  create_table "holds", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer "user_id",                                     null: false
     t.string  "holdable_type",                               null: false
     t.integer "holdable_id"
@@ -77,7 +77,7 @@ ActiveRecord::Schema.define(version: 20170130064900) do
     t.index ["user_id"], name: "index_holds_on_user_id", using: :btree
   end
 
-  create_table "notifications", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
+  create_table "notifications", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "user_id",            null: false
     t.integer  "actor_id"
     t.string   "notify_type",        null: false
@@ -94,7 +94,7 @@ ActiveRecord::Schema.define(version: 20170130064900) do
     t.index ["user_id"], name: "index_notifications_on_user_id", using: :btree
   end
 
-  create_table "pictures", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
+  create_table "pictures", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "picture",                    null: false
     t.datetime "created_at",                 null: false
     t.datetime "updated_at",                 null: false
@@ -103,13 +103,13 @@ ActiveRecord::Schema.define(version: 20170130064900) do
     t.index ["user_id"], name: "index_pictures_on_user_id", using: :btree
   end
 
-  create_table "resume_pictureships", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
+  create_table "resume_pictureships", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer "resume_id"
     t.integer "picture_id"
     t.index ["resume_id", "picture_id"], name: "index_resume_pictureships_on_resume_id_and_picture_id", unique: true, using: :btree
   end
 
-  create_table "resumes", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
+  create_table "resumes", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.text     "content",      limit: 65535
     t.text     "content_html", limit: 65535
     t.boolean  "posted",                     default: false
@@ -119,18 +119,18 @@ ActiveRecord::Schema.define(version: 20170130064900) do
     t.index ["user_id"], name: "index_resumes_on_user_id", unique: true, using: :btree
   end
 
-  create_table "tags", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
+  create_table "tags", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "name", null: false
     t.index ["name"], name: "index_tags_on_name", unique: true, using: :btree
   end
 
-  create_table "user_categoryships", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
+  create_table "user_categoryships", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer "user_id",     null: false
     t.integer "category_id", null: false
     t.index ["user_id", "category_id"], name: "index_user_categoryships_on_user_id_and_category_id", unique: true, using: :btree
   end
 
-  create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
+  create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "username",                              null: false
     t.string   "email",                                 null: false
     t.string   "nickname"
@@ -154,7 +154,7 @@ ActiveRecord::Schema.define(version: 20170130064900) do
     t.index ["username"], name: "index_users_on_username", unique: true, using: :btree
   end
 
-  create_table "userships", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
+  create_table "userships", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer "follower_id",  null: false
     t.integer "following_id", null: false
     t.index ["follower_id", "following_id"], name: "index_userships_on_follower_id_and_following_id", unique: true, using: :btree

@@ -1,10 +1,31 @@
 <footer id="footer" class="text-muted hidden-xs hidden-sm">
   <div class="container">
-    <span class="site-footer-info">  © <%= Time.now.year %> hikumho. Powered by Rails. </span>
+    <span class="site-footer-info">  © <%= Time.now.year %> 太原工业学院机械工程系. Powered by Rails. </span>
     <span class="site-footer-links">
-      <a href="https://www.github.com/hikumho">Github</a> |
-      <a href="mailto:hi.jinhu.zhang@gmail.com">Email</a> |
-      <a href='http://hijinhu.me/app/milog.apk'>App</a>
+      <div class="site-footer-links">
+        <%= link_to(fa_icon("weibo", text: "官方微博"), "https://fullstack.xinshengdaxue.com/works/194") %>
+      </div>
     </span>
+
+    <span>
+      <div class="site-footer-links">
+        <%= link_to(fa_icon("wechat", text: "微信公号"), "https://fullstack.xinshengdaxue.com/works/194") %>
+      </div>
+  </span>
+    <span>
+      <div class="site-footer-links">
+        <%= link_to(fa_icon("question", text: "常见问题"), "https://fullstack.xinshengdaxue.com/works/194") %>
+      </div>
+  </span>
+    <span>
+      <div class="site-footer-links">
+        <%= link_to(fa_icon("comments", text: "联系我们"), "https://fullstack.xinshengdaxue.com/works/194") %>
+      </div>
+  </span>
+    <span>
+      <div class="site-footer-links">
+        <%= link_to(fa_icon("info", text: "关于我们"), "https://fullstack.xinshengdaxue.com/works/194") %>
+      </div>
+  </span>
   </div>
 </footer>

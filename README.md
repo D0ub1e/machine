@@ -1,11 +1,5 @@
 # 机械教学网站
 
-一基于 [ Ruby on Rails ](https://github.com/rails/rails) 的个人教学网站. http://hijinhu.me/hijinhu/  
-
-Guest Account > Email: aguest@hijinhu.me | Password: 123456
-
-静态页面可访问 https://github.com/HiKumho/milog/tree/static_pages
-
 ## 特点
 
 + 支持[Bootstrap](http://getbootstrap.com/)，实现响应式设计
